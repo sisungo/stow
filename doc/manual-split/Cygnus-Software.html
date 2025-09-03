@@ -1,20 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<!-- This manual describes GNU Stow version 2.3.1
-(28 July 2019), a program for managing farms of symbolic links.
+<!-- Created by GNU Texinfo 7.0.3, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.4.1
+(8 September 2024), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein bobg+stow@zanshin.com
 
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
+© 2000, 2001 Guillaume Morin gmorin@gnu.org
 
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2007 Kahlil (Kal) Hodgson kahlil@internode.on.net
 
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
+© 2011 Adam Spiers stow@adamspiers.org
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -32,9 +35,6 @@ Permission is granted to copy and distribute translations of this manual
 into another language, under the above conditions for modified versions,
 except that this permission notice may be stated in a translation
 approved by the Free Software Foundation. -->
-<!-- Created by GNU Texinfo 6.5, http://www.gnu.org/software/texinfo/ -->
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Cygnus Software (Stow)</title>
 
 <meta name="description" content="Cygnus Software (Stow)">
@@ -42,37 +42,17 @@ approved by the Free Software Foundation. -->
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
-<link href="index.html#Top" rel="start" title="Top">
-<link href="Index.html#Index" rel="index" title="Index">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
-<link href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" rel="up" title="Compile-time vs Install-time">
-<link href="Perl-and-Perl-5-Modules.html#Perl-and-Perl-5-Modules" rel="next" title="Perl and Perl 5 Modules">
-<link href="Other-FSF-Software.html#Other-FSF-Software" rel="prev" title="Other FSF Software">
+<link href="Compile_002dtime-vs_002e-Install_002dtime.html" rel="up" title="Compile-time vs. Install-time">
+<link href="Perl-and-Perl-5-Modules.html" rel="next" title="Perl and Perl 5 Modules">
+<link href="Other-FSF-Software.html" rel="prev" title="Other FSF Software">
 <style type="text/css">
 <!--
-a.summary-letter {text-decoration: none}
-blockquote.indentedblock {margin-right: 0em}
-blockquote.smallindentedblock {margin-right: 0em; font-size: smaller}
-blockquote.smallquotation {font-size: smaller}
-div.display {margin-left: 3.2em}
-div.example {margin-left: 3.2em}
-div.lisp {margin-left: 3.2em}
-div.smalldisplay {margin-left: 3.2em}
-div.smallexample {margin-left: 3.2em}
-div.smalllisp {margin-left: 3.2em}
-kbd {font-style: oblique}
-pre.display {font-family: inherit}
-pre.format {font-family: inherit}
-pre.menu-comment {font-family: serif}
-pre.menu-preformatted {font-family: serif}
-pre.smalldisplay {font-family: inherit; font-size: smaller}
-pre.smallexample {font-size: smaller}
-pre.smallformat {font-family: inherit; font-size: smaller}
-pre.smalllisp {font-size: smaller}
-span.nolinebreak {white-space: nowrap}
-span.roman {font-family: initial; font-weight: normal}
-span.sansserif {font-family: sans-serif; font-weight: normal}
-ul.no-bullet {list-style: none}
+span.r {font-family: initial; font-weight: normal; font-style: normal}
 -->
 </style>
 
@@ -80,40 +60,40 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en">
-<a name="Cygnus-Software"></a>
-<div class="header">
+<div class="section-level-extent" id="Cygnus-Software">
+<div class="nav-panel">
 <p>
-Next: <a href="Perl-and-Perl-5-Modules.html#Perl-and-Perl-5-Modules" accesskey="n" rel="next">Perl and Perl 5 Modules</a>, Previous: <a href="Other-FSF-Software.html#Other-FSF-Software" accesskey="p" rel="prev">Other FSF Software</a>, Up: <a href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" accesskey="u" rel="up">Compile-time vs Install-time</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Perl-and-Perl-5-Modules.html" accesskey="n" rel="next">Perl and Perl 5 Modules</a>, Previous: <a href="Other-FSF-Software.html" accesskey="p" rel="prev">Other FSF Software</a>, Up: <a href="Compile_002dtime-vs_002e-Install_002dtime.html" accesskey="u" rel="up">Compile-time vs. Install-time</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Cygnus-Software-1"></a>
-<h3 class="section">12.4 Cygnus Software</h3>
+<h3 class="section" id="Cygnus-Software-1">12.4 Cygnus Software</h3>
 
 <p>Cygnus is a commercial supplier and supporter of GNU software.  It has
 also written several of its own packages, released under the terms of
 the GNU General Public License; and it has taken over the maintenance of
-other packages.  Among the packages released by Cygnus are &lsquo;<samp>gdb</samp>&rsquo;,
-&lsquo;<samp>gnats</samp>&rsquo;, and &lsquo;<samp>dejagnu</samp>&rsquo;.
+other packages.  Among the packages released by Cygnus are &lsquo;<samp class="samp">gdb</samp>&rsquo;,
+&lsquo;<samp class="samp">gnats</samp>&rsquo;, and &lsquo;<samp class="samp">dejagnu</samp>&rsquo;.
 </p>
 <p>Cygnus packages have the peculiarity that each one unpacks into a
 directory tree with a generic top-level Makefile, which is set up to
-compile <em>all</em> of Cygnus&rsquo; packages, any number of which may reside
+compile <em class="emph">all</em> of Cygnus&rsquo; packages, any number of which may reside
 under the top-level directory.  In other words, even if you&rsquo;re only
-building &lsquo;<samp>gnats</samp>&rsquo;, the top-level Makefile will look for, and try to
-build, <samp>gdb</samp> and <samp>dejagnu</samp> subdirectories, among many others.
+building &lsquo;<samp class="samp">gnats</samp>&rsquo;, the top-level Makefile will look for, and try to
+build, <samp class="file">gdb</samp> and <samp class="file">dejagnu</samp> subdirectories, among many others.
 </p>
-<p>The result is that if you try &lsquo;<samp>make -n install
-prefix=/usr/local/stow/<var>package</var></samp>&rsquo; at the top level of a Cygnus
+<p>The result is that if you try &lsquo;<samp class="samp">make -n install
+prefix=/usr/local/stow/<var class="var">package</var></samp>&rsquo; at the top level of a Cygnus
 package, you&rsquo;ll get a bewildering amount of output.  It will then be
 very difficult to visually scan the output to see whether the install
 will proceed correctly.  Unfortunately, it&rsquo;s not always clear how to
 invoke an install from the subdirectory of interest.
 </p>
-<p>In cases like this, the best approach is to run your &lsquo;<samp>make install
-prefix=<span class="roman">&hellip;</span></samp>&rsquo;, but be ready to interrupt it if you detect that it
+<p>In cases like this, the best approach is to run your &lsquo;<samp class="samp">make install
+prefix=<span class="r">&hellip;</span></samp>&rsquo;, but be ready to interrupt it if you detect that it
 is recompiling files.  Usually it will work just fine; otherwise,
 install manually.
 </p>
+</div>
 
 
 

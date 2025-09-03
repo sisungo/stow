@@ -8,10 +8,10 @@ Last-Update: 2019-09-07
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/bin/stow.in b/bin/stow.in
-index 4faa451..86c0ae1 100755
+index 8254d2d..b9b007d 100755
 --- a/bin/stow.in
 +++ b/bin/stow.in
-@@ -418,7 +418,7 @@ parts of Stow's info manual, and then converted to POD format by Adam
+@@ -420,7 +420,7 @@ parts of Stow's info manual, and then converted to POD format by Adam
  Spiers.  The info manual contains the following notice, which, as it
  says, applies to this manual page, too.  The text of the section
  entitled "GNU General Public License" can be found in the file

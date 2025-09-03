@@ -31,7 +31,7 @@ use File::Spec;
 use Test::More;
 
 use Stow;
-use Stow::Util qw(parent canon_path join_paths);
+use Stow::Util qw(parent canon_path);
 
 use base qw(Exporter);
 our @EXPORT = qw(
@@ -41,7 +41,6 @@ our @EXPORT = qw(
     cd
     new_Stow new_compat_Stow
     make_path make_link make_invalid_link make_file
-    setup_global_ignore setup_package_ignore
     remove_dir remove_file remove_link
     cat_file
     is_link is_dir_not_symlink is_nonexistent_path
@@ -52,20 +51,19 @@ our $ABS_TEST_DIR = File::Spec->rel2abs('tmp-testing-trees');
 
 sub init_test_dirs {
     my $test_dir = shift || $TEST_DIR;
-    my $abs_test_dir = File::Spec->rel2abs($test_dir);
+    $ABS_TEST_DIR = File::Spec->rel2abs($test_dir);
 
     # Create a run_from/ subdirectory for tests which want to run
     # from a separate directory outside the Stow directory or
     # target directory.
-    for my $dir ("target", "stow", "run_from", "stow directory") {
+    for my $dir ("target", "stow", "run_from") {
         my $path = "$test_dir/$dir";
         -d $path and remove_tree($path);
         make_path($path);
     }
 
     # Don't let user's ~/.stow-global-ignore affect test results
-    $ENV{HOME} = $abs_test_dir;
-    return $abs_test_dir;
+    $ENV{HOME} = $ABS_TEST_DIR;
 }
 
 sub new_Stow {
@@ -159,20 +157,6 @@ sub make_file {
         or croak "could not create file: $path ($!)\n";
     print $FILE $contents if defined $contents;
     close $FILE;
-}
-
-sub setup_global_ignore {
-    my ($contents) = @_;
-    my $global_ignore_file = join_paths($ENV{HOME}, $Stow::GLOBAL_IGNORE_FILE);
-    make_file($global_ignore_file, $contents);
-    return $global_ignore_file;
-}
-
-sub setup_package_ignore {
-    my ($package_path, $contents) = @_;
-    my $package_ignore_file = join_paths($package_path, $Stow::LOCAL_IGNORE_FILE);
-    make_file($package_ignore_file, $contents);
-    return $package_ignore_file;
 }
 
 #===== SUBROUTINE ===========================================================

@@ -2,9 +2,10 @@ Source: stow
 Section: admin
 Priority: optional
 Maintainer: Chuan-kai Lin <cklin@debian.org>
-Build-Depends: debhelper-compat (= 12)
-Build-Depends-Indep: quilt, perl, libio-stringy-perl, libtest-output-perl, texlive, texinfo
-Standards-Version: 4.4.0.1
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: quilt, perl, libio-stringy-perl, libtest-output-perl
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
 Homepage: https://www.gnu.org/software/stow/
 
 Package: stow

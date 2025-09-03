@@ -1,20 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<!-- This manual describes GNU Stow version 2.3.1
-(28 July 2019), a program for managing farms of symbolic links.
+<!-- Created by GNU Texinfo 7.0.3, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.4.1
+(8 September 2024), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein bobg+stow@zanshin.com
 
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
+© 2000, 2001 Guillaume Morin gmorin@gnu.org
 
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2007 Kahlil (Kal) Hodgson kahlil@internode.on.net
 
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
+© 2011 Adam Spiers stow@adamspiers.org
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -32,9 +35,6 @@ Permission is granted to copy and distribute translations of this manual
 into another language, under the above conditions for modified versions,
 except that this permission notice may be stated in a translation
 approved by the Free Software Foundation. -->
-<!-- Created by GNU Texinfo 6.5, http://www.gnu.org/software/texinfo/ -->
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Justification For Yet Another Set Of Ignore Files (Stow)</title>
 
 <meta name="description" content="Justification For Yet Another Set Of Ignore Files (Stow)">
@@ -42,69 +42,42 @@ approved by the Free Software Foundation. -->
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
-<link href="index.html#Top" rel="start" title="Top">
-<link href="Index.html#Index" rel="index" title="Index">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
-<link href="Ignore-Lists.html#Ignore-Lists" rel="up" title="Ignore Lists">
-<link href="Installing-Packages.html#Installing-Packages" rel="next" title="Installing Packages">
-<link href="Types-And-Syntax-Of-Ignore-Lists.html#Types-And-Syntax-Of-Ignore-Lists" rel="prev" title="Types And Syntax Of Ignore Lists">
-<style type="text/css">
-<!--
-a.summary-letter {text-decoration: none}
-blockquote.indentedblock {margin-right: 0em}
-blockquote.smallindentedblock {margin-right: 0em; font-size: smaller}
-blockquote.smallquotation {font-size: smaller}
-div.display {margin-left: 3.2em}
-div.example {margin-left: 3.2em}
-div.lisp {margin-left: 3.2em}
-div.smalldisplay {margin-left: 3.2em}
-div.smallexample {margin-left: 3.2em}
-div.smalllisp {margin-left: 3.2em}
-kbd {font-style: oblique}
-pre.display {font-family: inherit}
-pre.format {font-family: inherit}
-pre.menu-comment {font-family: serif}
-pre.menu-preformatted {font-family: serif}
-pre.smalldisplay {font-family: inherit; font-size: smaller}
-pre.smallexample {font-size: smaller}
-pre.smallformat {font-family: inherit; font-size: smaller}
-pre.smalllisp {font-size: smaller}
-span.nolinebreak {white-space: nowrap}
-span.roman {font-family: initial; font-weight: normal}
-span.sansserif {font-family: sans-serif; font-weight: normal}
-ul.no-bullet {list-style: none}
--->
-</style>
+<link href="Ignore-Lists.html" rel="up" title="Ignore Lists">
+<link href="Types-And-Syntax-Of-Ignore-Lists.html" rel="prev" title="Types And Syntax Of Ignore Lists">
 
 
 </head>
 
 <body lang="en">
-<a name="Justification-For-Yet-Another-Set-Of-Ignore-Files"></a>
-<div class="header">
+<div class="section-level-extent" id="Justification-For-Yet-Another-Set-Of-Ignore-Files">
+<div class="nav-panel">
 <p>
-Previous: <a href="Types-And-Syntax-Of-Ignore-Lists.html#Types-And-Syntax-Of-Ignore-Lists" accesskey="p" rel="prev">Types And Syntax Of Ignore Lists</a>, Up: <a href="Ignore-Lists.html#Ignore-Lists" accesskey="u" rel="up">Ignore Lists</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+Previous: <a href="Types-And-Syntax-Of-Ignore-Lists.html" accesskey="p" rel="prev">Types And Syntax Of Ignore Lists</a>, Up: <a href="Ignore-Lists.html" accesskey="u" rel="up">Ignore Lists</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Justification-For-Yet-Another-Set-Of-Ignore-Files-1"></a>
-<h3 class="section">4.3 Justification For Yet Another Set Of Ignore Files</h3>
+<h3 class="section" id="Justification-For-Yet-Another-Set-Of-Ignore-Files-1">4.3 Justification For Yet Another Set Of Ignore Files</h3>
 
 <p>The reader may note that this format is very similar to existing
-ignore list file formats, such as those for <code>cvs</code>, <code>git</code>,
-<code>rsync</code> etc., and wonder if another set of ignore lists is
+ignore list file formats, such as those for <code class="command">cvs</code>, <code class="command">git</code>,
+<code class="command">rsync</code> etc., and wonder if another set of ignore lists is
 justified.  However there are good reasons why Stow does not simply
-check for the presence of say, <samp>.cvsignore</samp>, and use that if it
+check for the presence of say, <samp class="file">.cvsignore</samp>, and use that if it
 exists.  Firstly, there is no guarantee that a stow package would
 contain any version control meta-data, or permit introducing this if
 it didn&rsquo;t already exist.
 </p>
 <p>Secondly even if it did, version control system ignore lists generally
-reflect <em>build-time</em> ignores rather than <em>install-time</em>, and
+reflect <em class="emph">build-time</em> ignores rather than <em class="emph">install-time</em>, and
 there may be some intermediate or temporary files on those ignore
 lists generated during development or at build-time which it would be
 inappropriate to stow, even though many files generated at build-time
 (binaries, libraries, documentation etc.) certainly do need to be
-stowed.  Similarly, if a file is <em>not</em> in the version control
+stowed.  Similarly, if a file is <em class="emph">not</em> in the version control
 system&rsquo;s ignore list, there is no way of knowing whether the file is
 intended for end use, let alone whether the version control system is
 tracking it or not.
@@ -114,6 +87,7 @@ systems do not provide sufficient information for Stow to determine
 which files and directories to stow, and so it makes sense for Stow to
 support independent ignore lists.
 </p>
+</div>
 
 
 

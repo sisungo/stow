@@ -14,10 +14,10 @@ Last-Update: 2019-09-08
  1 file changed, 19 insertions(+), 14 deletions(-)
 
 diff --git a/bin/stow.in b/bin/stow.in
-index 86c0ae1..13ee74f 100755
+index b9b007d..9a947b2 100755
 --- a/bin/stow.in
 +++ b/bin/stow.in
-@@ -566,11 +566,25 @@ sub parse_options {
+@@ -568,11 +568,25 @@ sub parse_options {
      my @pkgs_to_stow   = ();
      my $action = 'stow';
  
@@ -44,7 +44,7 @@ index 86c0ae1..13ee74f 100755
          \%options,
          'verbose|v:+', 'help|h', 'simulate|n|no',
          'version|V', 'compat|p', 'dir|d=s', 'target|t=s',
-@@ -603,21 +617,12 @@ sub parse_options {
+@@ -605,21 +619,12 @@ sub parse_options {
          'R|restow'  => sub { $action = 'restow' },
  
          # Handler for non-option arguments

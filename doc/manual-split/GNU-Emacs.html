@@ -1,20 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<!-- This manual describes GNU Stow version 2.3.1
-(28 July 2019), a program for managing farms of symbolic links.
+<!-- Created by GNU Texinfo 7.0.3, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.4.1
+(8 September 2024), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein bobg+stow@zanshin.com
 
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
+© 2000, 2001 Guillaume Morin gmorin@gnu.org
 
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2007 Kahlil (Kal) Hodgson kahlil@internode.on.net
 
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
+© 2011 Adam Spiers stow@adamspiers.org
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -32,9 +35,6 @@ Permission is granted to copy and distribute translations of this manual
 into another language, under the above conditions for modified versions,
 except that this permission notice may be stated in a translation
 approved by the Free Software Foundation. -->
-<!-- Created by GNU Texinfo 6.5, http://www.gnu.org/software/texinfo/ -->
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>GNU Emacs (Stow)</title>
 
 <meta name="description" content="GNU Emacs (Stow)">
@@ -42,37 +42,17 @@ approved by the Free Software Foundation. -->
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
-<link href="index.html#Top" rel="start" title="Top">
-<link href="Index.html#Index" rel="index" title="Index">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
-<link href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" rel="up" title="Compile-time vs Install-time">
-<link href="Other-FSF-Software.html#Other-FSF-Software" rel="next" title="Other FSF Software">
-<link href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" rel="prev" title="Compile-time vs Install-time">
+<link href="Compile_002dtime-vs_002e-Install_002dtime.html" rel="up" title="Compile-time vs. Install-time">
+<link href="Other-FSF-Software.html" rel="next" title="Other FSF Software">
+<link href="Compile_002dtime-vs_002e-Install_002dtime.html" rel="prev" title="Compile-time vs. Install-time">
 <style type="text/css">
 <!--
-a.summary-letter {text-decoration: none}
-blockquote.indentedblock {margin-right: 0em}
-blockquote.smallindentedblock {margin-right: 0em; font-size: smaller}
-blockquote.smallquotation {font-size: smaller}
-div.display {margin-left: 3.2em}
 div.example {margin-left: 3.2em}
-div.lisp {margin-left: 3.2em}
-div.smalldisplay {margin-left: 3.2em}
-div.smallexample {margin-left: 3.2em}
-div.smalllisp {margin-left: 3.2em}
-kbd {font-style: oblique}
-pre.display {font-family: inherit}
-pre.format {font-family: inherit}
-pre.menu-comment {font-family: serif}
-pre.menu-preformatted {font-family: serif}
-pre.smalldisplay {font-family: inherit; font-size: smaller}
-pre.smallexample {font-size: smaller}
-pre.smallformat {font-family: inherit; font-size: smaller}
-pre.smalllisp {font-size: smaller}
-span.nolinebreak {white-space: nowrap}
-span.roman {font-family: initial; font-weight: normal}
-span.sansserif {font-family: sans-serif; font-weight: normal}
-ul.no-bullet {list-style: none}
 -->
 </style>
 
@@ -80,47 +60,47 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en">
-<a name="GNU-Emacs"></a>
-<div class="header">
+<div class="section-level-extent" id="GNU-Emacs">
+<div class="nav-panel">
 <p>
-Next: <a href="Other-FSF-Software.html#Other-FSF-Software" accesskey="n" rel="next">Other FSF Software</a>, Previous: <a href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" accesskey="p" rel="prev">Compile-time vs Install-time</a>, Up: <a href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" accesskey="u" rel="up">Compile-time vs Install-time</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Other-FSF-Software.html" accesskey="n" rel="next">Other FSF Software</a>, Previous: <a href="Compile_002dtime-vs_002e-Install_002dtime.html" accesskey="p" rel="prev">Compile-time vs. Install-time</a>, Up: <a href="Compile_002dtime-vs_002e-Install_002dtime.html" accesskey="u" rel="up">Compile-time vs. Install-time</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="GNU-Emacs-1"></a>
-<h3 class="section">12.2 GNU Emacs</h3>
+<h3 class="section" id="GNU-Emacs-1">12.2 GNU Emacs</h3>
 
 <p>Although the Free Software Foundation has many enlightened practices
-regarding Makefiles and software installation (see see <a href="Other-FSF-Software.html#Other-FSF-Software">Other FSF Software</a>), Emacs, its flagship program, doesn&rsquo;t quite follow the
+regarding Makefiles and software installation (see see <a class="pxref" href="Other-FSF-Software.html">Other FSF Software</a>), Emacs, its flagship program, doesn&rsquo;t quite follow the
 rules.  In particular, most GNU software allows you to write:
 </p>
 <div class="example">
-<pre class="example">make
-make install prefix=/usr/local/stow/<var>package</var>
+<pre class="example-preformatted">make
+make install prefix=/usr/local/stow/<var class="var">package</var>
 </pre></div>
 
-<p>If you try this with Emacs, then the new value for <var>prefix</var> in the
-&lsquo;<samp>make install</samp>&rsquo; step will cause some files to get recompiled with
-the new value of <var>prefix</var> wired into them.  In Emacs 19.23 and
-later,<a name="DOCF8" href="#FOOT8"><sup>8</sup></a>
+<p>If you try this with Emacs, then the new value for <var class="var">prefix</var> in the
+&lsquo;<samp class="samp">make install</samp>&rsquo; step will cause some files to get recompiled with
+the new value of <var class="var">prefix</var> wired into them.  In Emacs 19.23 and
+later,<a class="footnote" id="DOCF8" href="#FOOT8"><sup>8</sup></a>
 the way to work around this problem is:
 </p>
 <div class="example">
-<pre class="example">make
+<pre class="example-preformatted">make
 make install-arch-dep install-arch-indep prefix=/usr/local/stow/emacs
 </pre></div>
 
 <p>In 19.22 and some prior versions of Emacs, the workaround was:
 </p>
 <div class="example">
-<pre class="example">make
+<pre class="example-preformatted">make
 make do-install prefix=/usr/local/stow/emacs
 </pre></div>
 
-<div class="footnote">
+</div>
+<div class="footnotes-segment">
 <hr>
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<h3><a name="FOOT8" href="#DOCF8">(8)</a></h3>
+<h5 class="footnote-body-heading"><a id="FOOT8" href="#DOCF8">(8)</a></h5>
 <p>As I write this, the current version of Emacs is 19.31.</p>
 </div>
 

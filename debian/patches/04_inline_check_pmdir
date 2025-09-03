@@ -1,0 +1,55 @@
+From: Chuan-kai Lin <cklin@debian.org>
+Date: Sun, 9 Feb 2025 15:52:47 -0800
+Subject: Makefile.am: inline check_pmdir
+
+This patch inlines check_pmdir, which eliminates the need to escape '#'
+within the shell commands and thereby fixes the following FTBFS:
+
+automake: warnings are treated as errors
+Makefile.am:131: warning: escaping \# comment markers is not portable
+autoreconf: error: automake failed with exit status: 1
+
+Last-Update: 2025-02-09
+---
+ Makefile.am | 25 +++++++++++--------------
+ 1 file changed, 11 insertions(+), 14 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 21a75bf..bcce295 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -128,23 +128,20 @@ calc_use_lib_pmdir = \
+ 	    use_lib_pmdir="use lib \"$(pmdir)\";"; \
+ 	fi
+ 
+-check_pmdir = \
+-	echo; \
+-	echo "\# Perl modules will be installed to $(pmdir)"; \
+-	echo "\# "; \
++bin/stow: bin/stow.in Makefile.am
++	[ -d bin ] || mkdir bin # required in vpath mode
++	echo
++	echo "# Perl modules will be installed to $(pmdir)"
++	echo "# "
+ 	if $(pmdir_in_INC); then \
+-	    echo "\# This is in $(PERL)'s built-in @INC, so everything"; \
+-	    echo "\# should work fine with no extra effort."; \
++	    echo "# This is in $(PERL)'s built-in @INC, so everything"; \
++	    echo "# should work fine with no extra effort."; \
+ 	else \
+-	    echo "\# This is not in $(PERL)'s built-in @INC, so the"; \
+-	    echo "\# front-end scripts will have an appropriate \"use lib\""; \
+-	    echo "\# line inserted to compensate."; \
+-	fi; \
++	    echo "# This is not in $(PERL)'s built-in @INC, so the"; \
++	    echo "# front-end scripts will have an appropriate \"use lib\""; \
++	    echo "# line inserted to compensate."; \
++	fi
+ 	echo
+-
+-bin/stow: bin/stow.in Makefile.am
+-	[ -d bin ] || mkdir bin # required in vpath mode
+-	@$(check_pmdir)
+ 	@$(calc_use_lib_pmdir); \
+ 	$(edit) < $< > $@
+ 	@echo "Generated $@ from $<"

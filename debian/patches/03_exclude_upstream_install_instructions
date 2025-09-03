@@ -2,13 +2,13 @@ From: Chuan-kai Lin <cklin@debian.org>
 Date: Sun, 8 Sep 2019 14:47:42 -0700
 Subject: Do not install upstream INSTALL instructions
 
-Last-Update: 2019-09-08
+Last-Update: 2024-10-20
 ---
  Makefile.am | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/Makefile.am b/Makefile.am
-index 7748399..6b21a36 100644
+index 75d9be9..21a75bf 100644
 --- a/Makefile.am
 +++ b/Makefile.am
 @@ -21,7 +21,7 @@ dist_man_MANS = doc/stow.8
@@ -17,6 +17,6 @@ index 7748399..6b21a36 100644
  dist_doc_DATA = \
 -	README.md INSTALL.md \
 +	README.md \
- 	$(PDF) $(HTML) doc/version.texi \
+ 	$(HTML) doc/version.texi \
  	ChangeLog doc/ChangeLog.OLD
  
