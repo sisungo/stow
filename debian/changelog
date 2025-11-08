@@ -1,3 +1,9 @@
+stow (2.4.1-2deepin1) unstable; urgency=medium
+
+  * Add dependency texinfo to avoid build errors
+
+ -- sisungo <sisungo@icloud.com>  Sat, 8 Nov 2025 15:58:12 +0800
+
 stow (2.4.1-2) unstable; urgency=medium
 
   * Removes #-escaping in Makefile.am (Closes: #1095395)

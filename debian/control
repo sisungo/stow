@@ -2,7 +2,7 @@ Source: stow
 Section: admin
 Priority: optional
 Maintainer: Chuan-kai Lin <cklin@debian.org>
-Build-Depends: debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13), texinfo
 Build-Depends-Indep: quilt, perl, libio-stringy-perl, libtest-output-perl
 Rules-Requires-Root: no
 Standards-Version: 4.7.0
